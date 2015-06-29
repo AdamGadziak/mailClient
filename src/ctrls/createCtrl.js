@@ -1,4 +1,4 @@
-app.controller('CreateCtrl', function($scope, $http, $location, service) {
+app.controller('CreateCtrl', function ($scope, $http, $location, service) {
     var email_id = $location.path().split(":")[1];
     $scope.email = {
         receivers: [],

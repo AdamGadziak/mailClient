@@ -1,4 +1,4 @@
-app.controller('ViewCtrl', function($scope, $http, $location, service) {
+app.controller('ViewCtrl', function ($scope, $http, $location, service) {
     var email_id = $location.path().split(":")[1];
     $scope.email = {};
     $scope.getEmail = function() {
