@@ -6,12 +6,20 @@
 
         <title>Email Client</title>
 
-        <meta name="author" content="Damian Sosnowski">
+        <meta name="author" content="Adam Gądziak">
+        <link rel="stylesheet" href="lib/css/main.css">
 
-        <script src="lib/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    	<script src="src/app.js"></script>
+	    <script src="src/ctrls/configCtrl.js"></script>
+	    <script src="src/ctrls/createCtrl.js"></script>
+	    <script src="src/ctrls/inboxCtrl.js"></script>
+	    <script src="src/ctrls/sentCtrl.js"></script>
+	    <script src="src/ctrls/viewCtrl.js"></script>
     </head>
 
     <body>
-
+    	<div id="ui-view" ui-view></div>
     </body>
 </html>
