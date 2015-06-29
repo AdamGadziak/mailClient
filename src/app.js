@@ -3,7 +3,7 @@ app = angular.module('myapp', ['ui.router']).config(function($stateProvider, $ur
     $stateProvider
 	.state('inbox', {
 		url: "/inbox",
-		templateUrl: "src/views/nbox.html",
+		templateUrl: "src/views/inbox.html",
 		controller: 'InboxCtrl'
 	})
 	.state('home', {
