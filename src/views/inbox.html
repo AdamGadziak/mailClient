@@ -1,9 +1,12 @@
 <search></search>
 <div id="inbox">
     <ul>
-        <li ng-repeat="">
-            <p class="title"></p>
-            <p class="content"></p>
+        <li ng-repeat="mail in inbox | filter: findmail | orderBy: '-received'"  class="{{mail.read}}">
+            <a ng-click="read()">
+                <div><p class="sender" ng-bind-html="mail.sender | highlight:findmail" >Nadawca: {{mail.sender}} </p><p class="time">Odebrano: {{mail.received}}</p><button ng-click="respond()">Odpowiedz</button><button id="delete" ng-click="delete()">Usuń</button></div>
+                <p class="title" ng-bind-html="mail.title | highlight:findmail" >Tytuł: {{mail.title}}</p>
+                <p class="content" ng-bind-html="mail.content | highlight:findmail" >{{mail.content}}</p>
+            </a>
         </li>
     </ul>
 </div>
