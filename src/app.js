@@ -14,7 +14,7 @@ app = angular.module('myapp', ['ui.router']).config(function($stateProvider, $ur
 	.state('email', {
 		url: "/view/:emailId",
 		templateUrl: "src/views/view.html",
-		controller: 'viewCtrl'
+		controller: 'ViewCtrl'
 	})
 	.state('sent', {
 		url: "/sent",
