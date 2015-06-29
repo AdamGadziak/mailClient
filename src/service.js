@@ -1,4 +1,4 @@
-app.service('emailService', function($http, $window, $interval) {
+app.service('service', function($http, $window, $interval) {
     
     var localStorage = $window.localStorage;
     var defaultInterval = 10;
