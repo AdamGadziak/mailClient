@@ -19,6 +19,15 @@ a {
 ul {
 	list-style: none;
 }
+button {
+	cursor: pointer;
+}
+li {
+	padding: 10px;
+    border: 1px solid grey;
+    margin: 5px;
+    cursor: pointer;
+}
 .color-rect {
     width: 50px;
     height: 50px;
@@ -42,4 +51,91 @@ ul {
 
 .color-rect.blue {
     background-color: steelblue;
+}
+menu {
+    width: 30%;
+    float: left;
+}
+menu ul li {
+    padding: 10px;
+    color: black;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgb(81, 0, 114);
+}
+#ui-view {
+    width: 70%;
+    float: right;
+}
+#inbox .false {
+	background-color : lightblue;
+}
+#inbox button:hover {
+  opacity: 1;
+}
+#inbox .true .sender, #inbox .true .content, #inbox .true .title  {
+  color: black;
+}
+#inbox .true #sent .true {
+	background: grey;
+}
+p.time {
+  margin-left: 10px;
+  display: inline-block;
+  color: black;
+}
+
+#sent p.time {
+  float: right;
+}
+
+#inbox .sender, #sent .receivers {
+	color: black;
+	padding-bottom: 5px;
+	display: inline-block;
+}
+
+#sent .receivers {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#inbox	button {
+  float: right;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  color: white;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+#inbox .true button {
+  background: lightblue;
+}
+
+#inbox .false button {
+  color: black;
+}
+
+
+#inbox .title, #sent .title {
+	color: black;
+	padding-bottom: 5px;
+}
+
+#sent .content, #sent .receivers, #sent .title{
+  color: black !important;
+}
+
+#inbox .content, #sent .content {
+	color: black;
+	max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div#inbox, div#sent {
+	width: 100%;
 }
