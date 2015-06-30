@@ -83,23 +83,19 @@ p.time {
   display: inline-block;
   color: black;
 }
-
 #sent p.time {
   float: right;
 }
-
 #inbox .sender, #sent .receivers {
 	color: black;
 	padding-bottom: 5px;
 	display: inline-block;
 }
-
 #sent .receivers {
 	overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 #inbox	button {
   float: right;
   width: 100px;
@@ -109,25 +105,19 @@ p.time {
   opacity: 0.7;
   margin-left: 5px;
 }
-
 #inbox .true button {
   background: lightblue;
 }
-
 #inbox .false button {
   color: black;
 }
-
-
 #inbox .title, #sent .title {
 	color: black;
 	padding-bottom: 5px;
 }
-
 #sent .content, #sent .receivers, #sent .title{
   color: black !important;
 }
-
 #inbox .content, #sent .content {
 	color: black;
 	max-width: 100%;
@@ -135,7 +125,78 @@ p.time {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 div#inbox, div#sent {
 	width: 100%;
+}
+#create, #view {
+  width: 30rem;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 5rem;
+  overflow: hidden;
+}
+#create h5 {
+    margin-bottom: 20px;
+}
+#create textarea {
+  resize: none;
+  width: 28.7rem;
+  min-height: 100px;
+}
+#create button, #view button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    background: lightblue;
+    color: white;
+}
+#create button[disabled], #view button[disabled] {
+    opacity: 0.2;
+}
+#create label {
+    width: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+#create input, #create textarea {
+    width: 28.7rem;
+    margin-bottom: 0.5rem;
+    height: 1rem;
+    padding: 0.5rem;
+    float: left;
+}
+#create form {
+    width: 100%;
+}
+#create .bubble::after {
+    border-color: red transparent;
+    border-style: solid;
+    border-width: 20px 0 0 30px;
+    content: "";
+    display: block;
+    left: -30px;
+    position: absolute;
+    top: -1px;
+    width: 0;
+    z-index: 1;
+}
+#create .bubble {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid red;
+    color: red;
+    height: auto;
+    margin-left: 31rem;
+    margin-top: 0;
+    min-width: 200px;
+    padding: 10px;
+    position: absolute;
+}
+#view header, #view h5, #view article {
+  margin-bottom: 15px;
+}
+
+input#filter-mail {
+    width: 100%;
+    padding: 10px;
 }
