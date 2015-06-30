@@ -12,10 +12,13 @@
 
 
     "predef"        : [  // Custom globals.
-        //"exampleVar",
         //"anotherCoolGlobal",
         //"iLoveDouglas"
     ],
+    "globals": {
+        "angular"   : false,
+        "app" : true
+    },
 
 
     // Development.
@@ -24,7 +27,7 @@
 
 
     // ECMAScript 5.
-    "es5"           : true,   // Allow ECMAScript 5 syntax.
+    "es5"           : false,   // Allow ECMAScript 5 syntax.
     "strict"        : false,  // Require `use strict` pragma  in every file.
     "globalstrict"  : true,  // Allow global "use strict" (also enables 'strict').
 
