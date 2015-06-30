@@ -53,18 +53,16 @@ li {
     background-color: steelblue;
 }
 menu {
-    width: 30%;
-    float: left;
+    width: 100%;
 }
 menu ul li {
     padding: 10px;
     color: black;
     text-transform: uppercase;
-    border-bottom: 1px solid rgb(81, 0, 114);
+    display: inline-block;
 }
 #ui-view {
-    width: 70%;
-    float: right;
+    width: 100%;
 }
 #inbox .false {
 	background-color : lightblue;
