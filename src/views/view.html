@@ -2,16 +2,16 @@
     <section>
         <header>
             <h5>{{email.title}}</h5>
-            <p>Nadawca: <a href="mailto: {{email.sender}}">{{email.sender}}</a></p>
-            <p>Odbiorca: {{email.receiver}}</p>
-            <time>Data: {{email.date | date:'dd/MM/yyyy o H:mm' }}</time>
+            <p>Sender: <a href="mailto: {{email.sender}}">{{email.sender}}</a></p>
+            <p>Receiver: {{email.receiver}}</p>
+            <time>Date: {{email.date | date:'dd/MM/yyyy o H:mm' }}</time>
         </header>
         <article>
             {{email.content}}
         </article>
         <footer>
-            <button type="button" ng-click="callToDeleteEmail()">Usuń</button>
-            <button ng-click="respond()">Odpowiedz</button>
+            <button type="button" ng-click="callToDeleteEmail()">Delete</button>
+            <button ng-click="respond()">Answer</button>
         </footer>
     </section>
     </form>
