@@ -5,5 +5,7 @@
         <div class="color-rect purple" ng-click="setColor('purple')"></div>
         <div class="color-rect red" ng-click="setColor('red')"></div>
         <div class="color-rect green" ng-click="setColor('green')"></div>
+        <label>Setup your refreshing time</label>
+        <input type="number" ng-model="interval" ng-change="setRefreshInterval()">
     </div>
 </div>
