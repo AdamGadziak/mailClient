@@ -6,7 +6,7 @@
             <div ng-show="mailForm.title.$invalid && !mailForm.title.$pristine" class="bubble">Title is required</div>
         </label>
         <label>
-            <input type="text" name="email" ng-model="email.receivers" ng-change="validateEmail()" ng-list placeholder="Adresaci" required>
+            <input type="text" name="email" ng-model="email.receivers" ng-change="validateEmail()" ng-list placeholder="Receivers" required>
             <div ng-show="mailForm.email.$invalid && !mailForm.email.$pristine" class="bubble">At least one email adress</div>
             <div ng-show="!validEmail && !mailForm.email.$invalid" class="bubble" class="bubble">Invalid email adress</div>
         </label>
