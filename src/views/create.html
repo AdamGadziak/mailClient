@@ -1,15 +1,15 @@
 <div id="create">
     <h5>New</h5>  
-    <form>
+    <form name="mailForm" novalidate>
         <label>
-            <input placeholder="title">
+            <input type="text" name="title" ng-model="email.title" placeholder="email title" required>
         </label>
         <label>
-            <input palceholder="Odbiorca">
+            <input type="text" name="email" ng-model="email.receivers" ng-change="validateEmail()" ng-list placeholder="Adresaci" required>
         </label>
         <label>
-            <textarea placeholder="content"></textarea>
+            <textarea ng-model="email.content" name="content" placeholder="Content" required></textarea>
         </label>
-        <button>Wyślij</button>
+        <button ng-disabled="mailForm.$invalid" ng-click="sendEmail()">Send</button>
     </form>
 </div>
