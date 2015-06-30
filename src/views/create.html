@@ -3,12 +3,16 @@
     <form name="mailForm" novalidate>
         <label>
             <input type="text" name="title" ng-model="email.title" placeholder="email title" required>
+            <div ng-show="mailForm.title.$invalid && !mailForm.title.$pristine" class="bubble">Title is required</div>
         </label>
         <label>
             <input type="text" name="email" ng-model="email.receivers" ng-change="validateEmail()" ng-list placeholder="Adresaci" required>
+            <div ng-show="mailForm.email.$invalid && !mailForm.email.$pristine" class="bubble">At least one email adress</div>
+            <div ng-show="!validEmail && !mailForm.email.$invalid" class="bubble" class="bubble">Invalid email adress</div>
         </label>
         <label>
             <textarea ng-model="email.content" name="content" placeholder="Content" required></textarea>
+            <div ng-show="mailForm.content.$invalid && !mailForm.content.$pristine" class="bubble">There should be some content</div>
         </label>
         <button ng-disabled="mailForm.$invalid" ng-click="sendEmail()">Send</button>
     </form>
