@@ -1,5 +1,6 @@
-app.controller('CreateCtrl', function ($scope, $http, $location, service) {
-    var email_id = $location.path().split(":")[1];
+app.controller('CreateCtrl', function ($scope, $state, $http, $stateParams, service) {
+    // var email_id = $location.path().split(":")[1];
+    var email_id = $stateParams.emailId.substring(1);
     $scope.email = {
         receivers: [],
         title: null,
@@ -7,9 +8,9 @@ app.controller('CreateCtrl', function ($scope, $http, $location, service) {
     };
     $scope.validEmail = true;
     $scope.sendEmail = function() {
-        if ($scope.mailForm.$valid) {
+        if ($scope.mailForm.$valid && $scope.validEmail) {
             service.sendEmail($scope.email).then(function(res) {
-                $location.path("/sent");
+                $state.go("sent");
             });
         }
     };

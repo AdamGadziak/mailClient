@@ -1,4 +1,4 @@
-app.controller('InboxCtrl', function ($scope, $http, $location, $interval, service) {
+app.controller('InboxCtrl', function ($scope, $http, $state, $interval, service) {
 	$scope.inbox = [];
 	$scope.getEmails = function () {
 		service.getEmails().then(function(res) {
@@ -18,13 +18,16 @@ app.controller('InboxCtrl', function ($scope, $http, $location, $interval, servi
 			return;
 		}
 		var id = this.mail.id;
-		$location.path('/view/:' + id);
+		// $location.path('/view/:' + id);
+    	$state.go('email', {emailId: ':' + id});
 		if (!this.mail.read) {
 			service.setAsRead(id);
 		}
 	};
 	$scope.respond = function(){
-    	$location.path( "/create/:" + this.mail.id);
+    	// $location.path( "/create/:" + this.mail.id);
+    	var id = this.mail.id;
+    	$state.go('reply', {emailId: ':' + id});
     };
 	$scope.$on('$destroy', function(){
 		service.clearIntervalAction();
