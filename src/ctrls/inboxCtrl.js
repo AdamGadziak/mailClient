@@ -1,7 +1,7 @@
-app.controller('InboxCtrl', function ($scope, $http, $state, $interval, service) {
+app.controller('InboxCtrl', function ($scope, $http, $state, $interval, apiService, intervalService) {
 	$scope.inbox = [];
 	$scope.getEmails = function () {
-		service.getEmails().then(function(res) {
+		apiService.getEmails().then(function(res) {
             $scope.inbox = res.data;
         });
 	};
@@ -9,7 +9,7 @@ app.controller('InboxCtrl', function ($scope, $http, $state, $interval, service)
 		event.target.disabled = 'disabled';
 		event.target.previousSibling.disabled = 'disabled';
 		var id = this.mail.id;
-		service.deleteEmail(id).then(function(res) {
+		apiService.deleteEmail(id).then(function(res) {
             $scope.getEmails();
         });
 	};
@@ -21,7 +21,7 @@ app.controller('InboxCtrl', function ($scope, $http, $state, $interval, service)
 		// $location.path('/view/:' + id);
     	$state.go('email', {emailId: ':' + id});
 		if (!this.mail.read) {
-			service.setAsRead(id);
+			apiService.setAsRead(id);
 		}
 	};
 	$scope.respond = function(){
@@ -30,10 +30,10 @@ app.controller('InboxCtrl', function ($scope, $http, $state, $interval, service)
     	$state.go('reply', {emailId: ':' + id});
     };
 	$scope.$on('$destroy', function(){
-		service.clearIntervalAction();
+		intervalService.clearIntervalAction();
 	});
 	$scope.getEmails();
 	var interval;
-	interval = $interval(function () { $scope.getEmails(); }, 1000 * service.getRefreshInterval());
-	service.setIntervalAction(interval);
+	interval = $interval(function () { $scope.getEmails(); }, 1000 * intervalService.getRefreshInterval());
+	intervalService.setIntervalAction(interval);
 });

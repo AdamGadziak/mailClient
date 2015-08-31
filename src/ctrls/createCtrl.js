@@ -1,4 +1,4 @@
-app.controller('CreateCtrl', function ($scope, $state, $http, $stateParams, service) {
+app.controller('CreateCtrl', function ($scope, $state, $http, $stateParams, apiService) {
     // var email_id = $location.path().split(":")[1];
     var email_id = $stateParams.emailId.substring(1);
     $scope.email = {
@@ -9,7 +9,7 @@ app.controller('CreateCtrl', function ($scope, $state, $http, $stateParams, serv
     $scope.validEmail = true;
     $scope.sendEmail = function() {
         if ($scope.mailForm.$valid && $scope.validEmail) {
-            service.sendEmail($scope.email).then(function(res) {
+            apiService.sendEmail($scope.email).then(function(res) {
                 $state.go("sent");
             });
         }
@@ -27,7 +27,7 @@ app.controller('CreateCtrl', function ($scope, $state, $http, $stateParams, serv
         }
     };
     if (email_id) {
-        service.getEmail(email_id).then(function(email) {
+        apiService.getEmail(email_id).then(function(email) {
             $scope.email = {
                 receivers: [].concat(email.data.sender),
                 title: "RE: " + email.data.title,

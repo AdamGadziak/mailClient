@@ -1,6 +1,6 @@
-app.controller('ConfigCtrl', function ($scope, $window, service) {
+app.controller('ConfigCtrl', function ($scope, $window, intervalService) {
     var localStorage = $window.localStorage;
-    $scope.interval =  service.getRefreshInterval();
+    $scope.interval =  intervalService.getRefreshInterval();
     $scope.setRefreshInterval = function() {
         localStorage.interval = parseInt($scope.interval, 10);
     };

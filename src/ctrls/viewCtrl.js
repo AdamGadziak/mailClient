@@ -1,9 +1,9 @@
-app.controller('ViewCtrl', function ($scope, $http, $state, $stateParams, service) {
+app.controller('ViewCtrl', function ($scope, $http, $state, $stateParams, apiService) {
     // var email_id = $location.path().split(":")[1];
     var email_id = $stateParams.emailId.substring(1);
     $scope.email = {};
     $scope.getEmail = function() {
-        service.getEmail(email_id).then(function(email){
+        apiService.getEmail(email_id).then(function(email){
             $scope.email = {
                 id: email.data.id,
                 title: email.data.title,
@@ -15,7 +15,7 @@ app.controller('ViewCtrl', function ($scope, $http, $state, $stateParams, servic
         });
     };
     $scope.callToDeleteEmail = function() {
-        service.deleteEmail(email_id).then(function(res){
+        apiService.deleteEmail(email_id).then(function(res){
             $state.go("inbox");
         });
     };
