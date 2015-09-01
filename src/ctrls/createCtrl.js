@@ -1,6 +1,8 @@
 app.controller('CreateCtrl', function ($scope, $state, $http, $stateParams, apiService) {
     // var email_id = $location.path().split(":")[1];
-    var email_id = $stateParams.emailId.substring(1);
+    if ($stateParams.emailId) {
+        var email_id = $stateParams.emailId.substring(1);
+    }
     $scope.email = {
         receivers: [],
         title: null,
