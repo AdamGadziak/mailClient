@@ -3,7 +3,7 @@
     <ul>
         <li ng-repeat="mail in inbox | filter: findmail | orderBy: '-received'"  class="{{mail.read}}">
             <a ng-click="read()">
-                <div><p class="sender" ng-bind-html="mail.sender | highlight:findmail" >Sender: {{mail.sender}} </p><p class="time">Received: {{mail.received}}</p><button ng-click="respond()">Answer</button><button id="delete" ng-click="delete()">Delete</button></div>
+                <div><p class="sender" ng-bind-html="mail.sender | highlight:findmail" >Sender: {{mail.sender}} </p><p class="time">Received: {{mail.received | date:'yyyy-MM-dd HH:mm:ss'}}</p><button ng-click="respond()">Answer</button><button id="delete" ng-click="delete()">Delete</button></div>
                 <p class="title" ng-bind-html="mail.title | highlight:findmail" >Title: {{mail.title}}</p>
                 <p class="content" ng-bind-html="mail.content | highlight:findmail" >{{mail.content}}</p>
             </a>
